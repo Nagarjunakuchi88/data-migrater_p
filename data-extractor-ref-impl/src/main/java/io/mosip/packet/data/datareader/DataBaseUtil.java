@@ -476,7 +476,7 @@ public class DataBaseUtil implements DataReader {
                 Collections.sort(tableRequestDtoList);
                 TableRequestDto tableRequestDto = tableRequestDtoList.get(0);
                 statement1 = conn.prepareStatement(generateQuery(tableRequestDto, dataHashMap, fieldsCategoryMap), ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                if(conn.isValid(6000)) {
+                if(conn.isValid(120)) {
                 	scrollableResultSet = statement1.executeQuery();
                 }else {
                 	conn.close();
